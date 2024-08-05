@@ -4,9 +4,13 @@
 - Docker-compose
 
 ## Running project at localhost
-
+### clone project
 > git clone https://github.com/akshaysharma1801/incident.git
+
+### navigate to directory
 > cd incident/
+
+### run docker compose
 > sudo docker-compose up
 
 ## Running at browser
