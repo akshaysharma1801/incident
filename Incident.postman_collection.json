@@ -1,0 +1,232 @@
+{
+	"info": {
+		"_postman_id": "6c74d777-2dab-4a29-95f8-a3f1bbfb85f2",
+		"name": "Incident",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2369301"
+	},
+	"item": [
+		{
+			"name": "account",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"testuser\",\n  \"email\": \"test@example.com\",\n  \"password\": \"password123\",\n  \"first_name\": \"Test\",\n  \"last_name\": \"User\",\n  \"phone_number\": \"1234567890\",\n  \"address\": \"123 Test St\",\n  \"city\": \"Test City\",\n  \"state\": \"Test State\",\n  \"country\": \"Test Country\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/account/register/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"account",
+								"register",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"test@example.com\",\n  \"password\": \"password123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/account/login/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"account",
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Incident",
+			"item": [
+				{
+					"name": "list incident by user",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIyODgzMTA2LCJpYXQiOjE3MjI3OTY3MDYsImp0aSI6IjUyZmJlYmM0MWQwNzQ4ZWY5MTg0ZTE3N2MzNmI4YTZhIiwidXNlcl9pZCI6Mn0.VKB5b68G3n2XyYDxVUn9maj991rz5z8kD1aS2xAVzhU",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/report/user/incidents/list/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"report",
+								"user",
+								"incidents",
+								"list",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search by incident id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIyODgzMTA2LCJpYXQiOjE3MjI3OTY3MDYsImp0aSI6IjUyZmJlYmM0MWQwNzQ4ZWY5MTg0ZTE3N2MzNmI4YTZhIiwidXNlcl9pZCI6Mn0.VKB5b68G3n2XyYDxVUn9maj991rz5z8kD1aS2xAVzhU",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/report/user/incidents/list/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"report",
+								"user",
+								"incidents",
+								"list",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create Incident",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIyODgzMTA2LCJpYXQiOjE3MjI3OTY3MDYsImp0aSI6IjUyZmJlYmM0MWQwNzQ4ZWY5MTg0ZTE3N2MzNmI4YTZhIiwidXNlcl9pZCI6Mn0.VKB5b68G3n2XyYDxVUn9maj991rz5z8kD1aS2xAVzhU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"entity_type\": \"Enterprise\",\n    \"incident_details\": \"Description of the incident...\",\n    \"priority\": \"High\",\n    \"incident_status\": \"Open\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/report/user/incidents/create/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"report",
+								"user",
+								"incidents",
+								"create",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update incident",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIyODgzMTA2LCJpYXQiOjE3MjI3OTY3MDYsImp0aSI6IjUyZmJlYmM0MWQwNzQ4ZWY5MTg0ZTE3N2MzNmI4YTZhIiwidXNlcl9pZCI6Mn0.VKB5b68G3n2XyYDxVUn9maj991rz5z8kD1aS2xAVzhU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"entity_type\": \"Enterprise\",\n    \"incident_details\": \"Description of the incident...\",\n    \"priority\": \"High\",\n    \"incident_status\": \"Open\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/report/user/incidents/create/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"report",
+								"user",
+								"incidents",
+								"create",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
